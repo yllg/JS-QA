@@ -1,16 +1,27 @@
 
+/*背景色绿色渐变*/
+body{
+  background-image: linear-gradient(to right, #cce6c9 0%, white 100%);
+}
+
+/*整个图案水平和垂直居中*/
+#wrap {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  top: 30px;
+  width: 220px;
+  height: 130px;
+}
+
 /*手掌和四个手指*/
 #PraiseButton {
   position:absolute;
-  top:150px;
-  left:200px;
+  left:75px;
   width:125px;
   height:130px;
   background:#ffcaa4;
   border-radius:60px 40px 40px 40px;
-}
-#PraiseButton.disable {
-  background-color:#bdc9ce;
 }
 
 
@@ -18,10 +29,6 @@
   display:block;
   content:'';
   position:absolute;
-}
-#PraiseButton.disable:before, #PraiseButton.disable:after {
-  background-image:none;
-  background-color:#bdc9ce;
 }
 
 #PraiseButton:before {
@@ -50,14 +57,10 @@
 /*手腕和大拇指*/
 #Thumb {
   position:absolute;
-  top:180px;
-  left:120px;
+  top:30px;
   width:90px;
   height:80px;
   background:#ffcaa4;
-}
-#Thumb.disable{
-  background-color:#bdc9ce;
 }
 
 
@@ -74,10 +77,46 @@
   background-image:linear-gradient(to right, #ffcaa4 60px, #efdbcd 80px, #ffcaa4 100px);
   /*border:1px solid #000;*/
 }
-#Thumb.disable:before{
-  background-image:none;
-  background-color:#bdc9ce;
+
+
+/*+1的弹出效果*/
+.hide {
+  display: none;
 }
+
+/*动态添加和删除num类名，增加这个动画效果哦*/
+.num {
+  display: block !important;
+  -webkit-animation: pop 0.8s ease-in-out alternate;
+  animation: pop 0.8s ease-in-out alternate;
+  /*定义动画播放的次数*/
+  -webkit-animation-iteration-count:1;
+
+  font-size: 40px;
+  color: #ff1177;
+  position: absolute;
+  right: -10%;
+  top: -45%;
+}
+
+@-webkit-keyframes pop {
+  from{
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
+        0 0 40px #ff1177, 0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177;
+  }
+  to{
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+        0 0 30px #ff1177, 0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
+  }
+}
+
+
+
+
 
 
 

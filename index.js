@@ -18,6 +18,7 @@ export class PraiseButton {
 	handleClick(){
 	    clearTimeout(this.tId);
 		this.num = add(this.num);
+		this.pop();
 		console.log(`父类被点了${this.num} 次！可无限点父类，不置灰色！！`);
 		console.log('快速点击多次会被稀释成一次！');
 	}
@@ -27,6 +28,13 @@ export class PraiseButton {
 	    this.tId = setTimeout(function(){
 	        method.call(context);
 	    },500);
+	}
+
+	pop() {
+		$('#animation').addClass('num');
+		setTimeout(function(){
+		$('#animation').removeClass('num');
+		},800);
 	}
 
 }
@@ -45,15 +53,18 @@ export class Thumb extends PraiseButton {
 	}
 	handleClick(){
 		if(this.num<9){
-        this.num = add(this.num);
+        	this.num = add(this.num);
+        	super.pop();
         }else if(this.num === 9){
-        	$('#PraiseButton').addClass('disable');
-        	$('#Thumb').addClass('disable');
-            this.num = add(this.num);
+        	$('#PraiseButton').css('-webkit-filter','grayscale(1)');
+        	$('#Thumb').css('-webkit-filter','grayscale(1)');
+        	this.num = add(this.num);  
+        	super.pop();	
         }else{
             this.num = 1;
-            $('#PraiseButton').removeClass('disable');
-        	$('#Thumb').removeClass('disable');
+            $('#PraiseButton').css('-webkit-filter','grayscale(0)');
+        	$('#Thumb').css('-webkit-filter','grayscale(0)');
+        	super.pop();
         }
 		console.log(`子类被点了${this.num} 次！第10次变灰色，然后从头计数！！`);
 		console.log('快速点击多次会被稀释成一次！');

@@ -1,3 +1,3 @@
-function add(num){
+window.add = function add(num){
 	return num+1;
 }
