@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点赞模块</title>
+	<link rel="stylesheet" href="./index.css">
+	<script src="./jquery-3.2.1.min.js"></script>
+	<script src="./node_modules/systemjs/dist/system.js"></script>
+</head>
+<body>
+	npm start运行本项目；打开console面板，点击图案看结果
+	<br>点赞图案共使用两个div绘制，#Thumb是拇指和手腕；#PraiseButton是剩下的拳头👊  部分；
+	<br>默认事件：子类点击事件绑定在#Thumb上，父类点击事件绑定到#PraiseButton上。
+	<br>也可以传参修改绑定的对象。
+	<br>
+	<br>npm test 测试add()加一函数
+	<div id="PraiseButton"></div>
+	<div id="Thumb"></div>
+	<script>
+		SystemJS.config({
+            baseURL:'./',
+            transpiler:'plugin-babel',
+            map:{
+                'plugin-babel':'node_modules/systemjs-plugin-babel/plugin-babel.js',
+                'systemjs-babel-build':'node_modules/systemjs-plugin-babel/systemjs-babel-browser.js'
+            }
+        });
+		SystemJS.import('index.js').then(m => {
+			//挂载到JQ上
+			$.extend({
+				PraiseButton: m.PraiseButton,
+				Thumb: m.Thumb
+			});
+			// 默认初始化
+			new $.PraiseButton().click();
+			new $.Thumb().click();
+
+			//传参，修改绑定的对象
+			// new $.PraiseButton($('#Thumb')).click();
+			// new $.Thumb($('#PraiseButton')).click();
+		});
+	</script>
+</body>
+</html>

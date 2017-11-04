@@ -1,0 +1,83 @@
+
+/*手掌和四个手指*/
+#PraiseButton {
+  position:absolute;
+  top:150px;
+  left:200px;
+  width:125px;
+  height:130px;
+  background:#ffcaa4;
+  border-radius:60px 40px 40px 40px;
+}
+#PraiseButton.disable {
+  background-color:#bdc9ce;
+}
+
+
+#PraiseButton:before, #PraiseButton:after {
+  display:block;
+  content:'';
+  position:absolute;
+}
+#PraiseButton.disable:before, #PraiseButton.disable:after {
+  background-image:none;
+  background-color:#bdc9ce;
+}
+
+#PraiseButton:before {
+  width:80px;
+  height:30px;
+  top:35px;
+  left:60px;
+  border-radius:25px 25px 25px 25px;
+  background-image:linear-gradient(to right, #ffcaa4 15px, #efdbcd 40px, #ffcaa4 100px);
+  -webkit-box-reflect: above 1px;
+  box-reflect: above 1px;
+}
+
+#PraiseButton:after {
+  width:80px;
+  height:30px;
+  top:66px;
+  left:55px;
+  border-radius:25px 25px 25px 25px;
+  background-image:linear-gradient(to right, #ffcaa4 15px, #efdbcd 40px, #ffcaa4 100px);
+  -webkit-box-reflect: below 1px;
+  box-reflect: below 1px;
+}
+
+
+/*手腕和大拇指*/
+#Thumb {
+  position:absolute;
+  top:180px;
+  left:120px;
+  width:90px;
+  height:80px;
+  background:#ffcaa4;
+}
+#Thumb.disable{
+  background-color:#bdc9ce;
+}
+
+
+#Thumb:before {
+  display:block;
+  content:'';
+  position:absolute;
+  width:110px;
+  height:30px;
+  top:-55px;
+  left:73px;
+  transform: rotateZ(-65deg);
+  border-radius:25px 25px 235px 255px;
+  background-image:linear-gradient(to right, #ffcaa4 60px, #efdbcd 80px, #ffcaa4 100px);
+  /*border:1px solid #000;*/
+}
+#Thumb.disable:before{
+  background-image:none;
+  background-color:#bdc9ce;
+}
+
+
+
