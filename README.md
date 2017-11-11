@@ -1,5 +1,6 @@
 # JS-QA
-前端自动化测试（clone到本地并install依赖包即可运行）
+前端自动化测试DEMO<br>
+（clone到本地并install依赖包即可运行）
 
 demo的几个功能点：<br>
 1.ES6实现点赞+1功能的父类PraiseButton.<br>
