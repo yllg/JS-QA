@@ -13,7 +13,7 @@
 ## 点赞组件的绘制和点击置灰
 
 效果图如下：
-![Image text](https://github.com/yllg/KOA2/blob/master/readme%20img/1.%E9%A1%B9%E7%9B%AE%E8%A6%81%E6%B1%82.png)
+![Image text](https://github.com/yllg/JS-QA/blob/master/css%E7%BB%98%E5%88%B6.png)
 
 利用伪类，实现尽可能少的html结构进行图案的绘制，以提高性能
 这里用1个div实现手掌和4个手指，另一个div实现手腕和大拇指
